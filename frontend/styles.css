@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #1e3a8a;
+  color: white;
+  padding: 16px 24px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+form {
+  display: grid;
+  gap: 8px;
+}
+
+input,
+textarea,
+select,
+button {
+  padding: 8px;
+}
+
+pre {
+  background: #0f172a;
+  color: #cbd5e1;
+  padding: 10px;
+  border-radius: 8px;
+  max-height: 240px;
+  overflow: auto;
+}

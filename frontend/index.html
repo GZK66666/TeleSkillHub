@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeleSkillHub</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TeleSkillHub V1.0</h1>
+      <p>内部 Skill 上传、审查、版本管理与下载平台</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>上传 Skill（zip/rar）</h2>
+        <form id="uploadForm">
+          <input name="name" placeholder="Skill 名称" required />
+          <input name="description" placeholder="描述" />
+          <select name="visibility_type">
+            <option value="public">公开</option>
+            <option value="department">部门可见</option>
+            <option value="user">指定人员可见</option>
+          </select>
+          <input name="departments" placeholder="部门ID列表，如 1,2" />
+          <input name="users" placeholder="人员ID列表，如 3,4" />
+          <input name="changelog" placeholder="版本说明" />
+          <input name="file" type="file" accept=".zip,.rar" required />
+          <button type="submit">上传</button>
+        </form>
+        <pre id="uploadResult"></pre>
+      </section>
+
+      <section class="card">
+        <h2>技能列表</h2>
+        <button id="refreshSkills">刷新</button>
+        <ul id="skills"></ul>
+      </section>
+
+      <section class="card">
+        <h2>下载排行榜</h2>
+        <button id="refreshLeaderboard">刷新</button>
+        <ol id="leaderboard"></ol>
+      </section>
+
+      <section class="card">
+        <h2>创建初版 Skill（Anthropic 格式）</h2>
+        <form id="generateForm">
+          <input name="skill_name" placeholder="Skill 名称" required />
+          <textarea name="requirement" placeholder="需求描述" required></textarea>
+          <button type="submit">生成</button>
+        </form>
+        <pre id="generateResult"></pre>
+      </section>
+
+      <section class="card">
+        <h2>版本文件浏览</h2>
+        <form id="browseForm">
+          <input name="skill_id" placeholder="Skill ID" required />
+          <input name="version_id" placeholder="Version ID" required />
+          <button type="submit">加载文件树</button>
+        </form>
+        <ul id="files"></ul>
+        <pre id="fileContent"></pre>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
